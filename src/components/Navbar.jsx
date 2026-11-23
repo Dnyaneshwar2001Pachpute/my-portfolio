@@ -1,56 +1,98 @@
+
 import { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
-
 function Navbar() {
-    const [menuOpen,setMenuOpen] = useState(false);
-    const closeMenu = () => setMenuOpen(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    return(
-        <nav className="navbar">
-            {/* Logo */}
-            <div className="navbar-logo">
-                <a href="/">
-                Dnyaneshwar<span>.</span>
-                </a>
-            </div>
+  const closeMenu = () => setMenuOpen(false);
 
-            {/* Navigation links */}
-            <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
-          <NavLink to="/" end className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+  return (
+    <nav className="navbar">
+
+      {/* Logo */}
+      <div className="navbar-logo">
+        <NavLink to="/" onClick={closeMenu}>
+          Dnyaneshwar<span>.</span>
+        </NavLink>
+      </div>
+
+      {/* Navigation links */}
+      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
+
+        <li>
+          <NavLink
+            to="/"
+            end
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
             Home
-            </NavLink>
+          </NavLink>
+        </li>
 
-            <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+        <li>
+          <NavLink
+            to="/about"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
             About
-            </NavLink>
+          </NavLink>
+        </li>
 
-            <NavLink to="/skills" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+        <li>
+          <NavLink
+            to="/skills"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
             Skills
-            </NavLink>
+          </NavLink>
+        </li>
 
-            <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+        <li>
+          <NavLink
+            to="/projects"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
             Projects
-            </NavLink>
-          
-            </ul>
+          </NavLink>
+        </li>
 
-            {/* Contact Button */}
-            <a href="#contact" className="navbar-contact">Contact Me</a>
+      </ul>
 
-            {/* Mobile menu button */}
-            <button
-            className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={menuOpen}
-            >
-            {menuOpen ? "✕" : "☰"}
+      {/* Contact Button */}
+      <a
+        href="#contact"
+        className="navbar-contact"
+        onClick={closeMenu}
+      >
+        Contact Me
+      </a>
 
-            </button>
-        </nav>
-    )
+      {/* Mobile menu button */}
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
+
+    </nav>
+  );
 }
 
 export default Navbar;
