@@ -73,14 +73,14 @@ function Navbar() {
       </ul>
 
       {/* Contact Button */}
-      <a
-        href="#contact"
-        className="navbar-contact"
+          <NavLink
+        to="/contact"
         onClick={closeMenu}
+        className="navbar-contact"
       >
         Contact Me
-      </a>
-
+      </NavLink>
+      
       {/* Mobile menu button */}
       <button
         className="menu-toggle"
