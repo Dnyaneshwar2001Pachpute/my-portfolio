@@ -12,12 +12,15 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      {/* Logo */}
-      <div className="navbar-logo">
-        <NavLink to="/" onClick={closeMenu}>
-          Dnyaneshwar<span>.</span>
-        </NavLink>
-      </div>
+      {/* Logo  */}
+      <NavLink to="/" className="navbar-logo">
+      <img
+      src="/images/pd-logo.png"
+      alt="PD Logo"
+      />
+      </NavLink>
+
+      
 
       {/* Navigation links */}
       <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
