@@ -1,5 +1,7 @@
 
 import "./About.css";
+import { Link } from "react-router-dom";
+
 
 function About() {
   return (
@@ -76,12 +78,12 @@ function About() {
               Download Resume <span>↓</span>
             </a>
 
-            <a
-              href="mailto:pachputednyaneshwar9@gmail.com"
+            <Link
+              to="/contact"
               className="about-btn secondary-btn"
             >
               Contact Me <span>↗</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
