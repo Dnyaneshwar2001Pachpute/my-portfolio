@@ -2,6 +2,12 @@
 import "./Contact.css";
 
 function Contact() {
+
+  const phoneNumber = "919356790644";
+  const whatsappMessage = encodeURIComponent(
+    "Hello Dnyaneshwar, I visited your portfolio and would like to connect with you."
+  )
+
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
@@ -32,6 +38,37 @@ function Contact() {
                 <h3>Email</h3>
                 <a href="mailto:pachputednyaneshwar9@gmail.com">
                   pachputednyaneshwar9@gmail.com
+                </a>
+              </div>
+            </div>
+
+             {/* Phone */}
+            <div className="contact-item">
+              <span className="contact-icon">📞</span>
+              <div>
+                <h3>Phone Number</h3>
+                <a href={`tel:+${phoneNumber}`}>
+                  +{phoneNumber}
+                </a>
+                <br />
+                <a href={`tel:+${phoneNumber}`} className="phone-action">
+                  Call Now ↗
+                </a>
+              </div>
+            </div>
+
+            {/* WhatsApp */}
+            <div className="contact-item">
+              <span className="contact-icon">💬</span>
+              <div>
+                <h3>WhatsApp</h3>
+                <a
+                  href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="whatsapp-action"
+                >
+                  Chat on WhatsApp ↗
                 </a>
               </div>
             </div>

@@ -178,3 +178,41 @@
     padding: 22px;
   }
 }
+
+/* PHONE AND WHATSAPP LINKS */
+
+.phone-action,
+.whatsapp-action {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.phone-action {
+  color: #f59e0b;
+}
+
+.whatsapp-action {
+  color: #22c55e;
+}
+
+.phone-action:hover,
+.whatsapp-action:hover {
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+  .contact-item {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact-item a {
+    overflow-wrap: anywhere;
+  }
+}
